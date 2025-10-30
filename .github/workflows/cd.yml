@@ -87,7 +87,7 @@ jobs:
           asset_content_type: application/zip
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Generate Changelog 📝
+      - name: Generate Changelog
           run: |
               git-chglog -o CHANGELOG.txt --template .chglog/CHANGELOG-release.tpl.md $(git describe --tags $(git rev-list --tags --max-count=1))
       - name: Update Release with Changelog 📦️
